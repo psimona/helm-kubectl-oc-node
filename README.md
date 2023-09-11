@@ -6,9 +6,9 @@
 
 Supported tags and release links
 
-| tag   | helm   | kubectl | oc      | yq     | alpine |
-|-------|--------|---------|---------|--------|--------|
-| 1.0.0 | 3.12.3 | 1.27.4  | 4.13.10 | 4.34.2 | 3.18.3 |
+| tag   | helm   | kubectl | oc      | node | yq     | alpine |
+|-------|--------|---------|---------|-----|--------|--------|
+| 1.0.0 | 3.12.3 | 1.27.4  | 4.13.10 | 18  | 4.34.2 | 3.18.3 |
 
 ## Overview
 
@@ -32,12 +32,12 @@ from which this repo has been forked.
 ## Run
 
 Example to just run helm on entry:  
-`docker run --rm psimona/helm-kubectl-oc helm`  
+`docker run --rm psimona/helm-kubectl-oc helm-node`  
 By default, kubectl will try to use /root/.kube/config file for connection to the kubernetes cluster, but does not exist
 by default in the image.
 
 Example for use with personal administration or troubleshooting with volume mount for kubeconfig files:  
-`docker run -it -v ~/.kube:/root/.kube psimona/helm-kubectl-oc`  
+`docker run -it -v ~/.kube:/root/.kube psimona/helm-kubectl-oc-node`  
 The -v maps your host docker machine Kubernetes configuration directory (~/.kube) to the container's Kubernetes
 configuration directory (root/.kube).
 

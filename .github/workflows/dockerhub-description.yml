@@ -18,5 +18,5 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        repository: psimona/helm-kubectl-oc
+        repository: psimona/helm-kubectl-oc-node
         short-description: ${{ github.event.repository.description }}

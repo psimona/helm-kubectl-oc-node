@@ -12,7 +12,7 @@ ARG YQ_VERSION
 COPY generate-oc-download-url.sh /tmp/generate-oc-download-url.sh
 
 RUN apk -U upgrade \
-    && apk add --no-cache gcompat ca-certificates bash git openssh curl gettext jq \
+    && apk add --no-cache gcompat ca-certificates bash git openssh curl gettext jq nodejs \
     && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz -O - | tar -xzO ${TARGETOS}-${TARGETARCH}/helm > /usr/local/bin/helm \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/v${KUBE_VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl -O /usr/local/bin/kubectl \
     && wget -q "$(/tmp/generate-oc-download-url.sh $OC_VERSION $TARGETOS $TARGETARCH)" -O - | tar -xzO oc  > /usr/local/bin/oc \
@@ -24,7 +24,8 @@ RUN apk -U upgrade \
     && helm version \
     && kubectl version --client \
     && oc version --client \
-    && yq --version
+    && yq --version \
+    && node --version
 
 WORKDIR /config
 
