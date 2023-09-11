@@ -1,8 +1,8 @@
-# helm-kubectl-oc Docker hub image
+# helm-kubectl-oc-node Docker hub image
 
-[![ci](https://github.com/psimona/helm-kubectl-oc/actions/workflows/image-build-push.yaml/badge.svg)](https://github.com/psimona/helm-kubectl-oc/actions/workflows/image-build-push.yaml)
-[![Docker Stars](https://img.shields.io/docker/stars/psimona/helm-kubectl-oc.svg?style=flat)](https://hub.docker.com/r/psimona/helm-kubectl-oc/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/psimona/helm-kubectl-oc.svg?style=flat)](https://hub.docker.com/r/psimona/helm-kubectl-oc/)
+[![ci](https://github.com/psimona/helm-kubectl-oc-node/actions/workflows/image-build-push.yaml/badge.svg)](https://github.com/psimona/helm-kubectl-oc-node/actions/workflows/image-build-push.yaml)
+[![Docker Stars](https://img.shields.io/docker/stars/psimona/helm-kubectl-oc-node.svg?style=flat)](https://hub.docker.com/r/psimona/helm-kubectl-oc-node/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/psimona/helm-kubectl-oc-node.svg?style=flat)](https://hub.docker.com/r/psimona/helm-kubectl-oc-node/)
 
 Supported tags and release links
 
@@ -32,7 +32,7 @@ from which this repo has been forked.
 ## Run
 
 Example to just run helm on entry:  
-`docker run --rm psimona/helm-kubectl-oc helm-node`  
+`docker run --rm psimona/helm-kubectl-oc-node helm-node`  
 By default, kubectl will try to use /root/.kube/config file for connection to the kubernetes cluster, but does not exist
 by default in the image.
 
